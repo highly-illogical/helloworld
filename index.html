@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 3%;
+            font-family: 'Courier New', Courier, monospace
+        }
+
+        .container > * {
+            padding: 2%;
+            margin: 1%;
+            text-align: center;
+        }
+
+        .text {
+            background-color: black;
+            color: white;
+        }
+
+        .link:nth-child(even) {
+            border: 1px solid #f06;
+            transition: background-color 0.5s;
+        }
+
+        .link:nth-child(odd) {
+            border: 1px solid #06f;
+            transition: background-color 0.5s;
+        }
+
+        .link:nth-child(even) > * {
+            color: #f06;
+            text-decoration: none;
+            transition: color-color 0.5s;
+        }
+
+        .link:nth-child(odd) > * {
+            color: #06f;
+            text-decoration: none;
+            transition: color 0.5s;
+        }
+
+        .link:hover:nth-child(even) {
+            border: 1px solid #f06;
+            background-color: #f06;
+        }
+
+        .link:hover:nth-child(odd) {
+            border: 1px solid #06f;
+            background-color: #06f;
+        }
+
+        .link:hover:nth-child(even) > * {
+            color: white;
+            text-decoration: none;
+        }
+
+        .link:hover:nth-child(odd) > * {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">I recently found a folder on my computer containing small projects I'd made when I was learning HTML, CSS and JS. I liked some of them enough that I wanted to put them on the internet and share them with the world.</div>
+        <div class="link"><a href="./starfield.html">Starfield</a></div>
+        <div class="link"><a href="./conway.html">Conway's Game of Life</a></div>
+    </div>
+</body>
+</html>
