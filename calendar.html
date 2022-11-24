@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="calendar.css">
+        <script src="calendar.js"></script>
+    </head>
+    <body>
+        <div id="calendar">
+            <div id="days">
+                <div id="container" style="display: flex; margin-bottom: 10px;">
+                    <button onclick="previousMonth(d)"><</button>
+                    <div id="month"></div>
+                    <button onclick="nextMonth(d)">></button>
+                </div>
+                <table id="dates">
+                </table>
+            </div>
+            <div>
+                <textarea id="entry" rows=21 cols=50></textarea>
+                <br />
+                <button onclick="update()">Update</button>
+            </div>
+        </div>
+    </body>
+</html>
