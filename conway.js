@@ -1,6 +1,26 @@
 var cells = new Array(52);
 var cells_next = new Array(52);
 
+var h = window.innerHeight * 0.95;
+var w = window.innerWidth * 0.95;
+
+var side;
+
+if (w > h) {
+    side = 500;
+}
+else {
+    side = w;
+}
+
+var can = document.getElementById("firstCanvas");
+var ctx = can.getContext("2d");
+
+can.width = side;
+can.height = side;
+
+var step = side/50;
+
 function reset() {
     for (var i=0; i<52; i++) {
         cells[i] = new Array(52).fill(0);
@@ -15,7 +35,6 @@ function reset() {
 }
 
 function conway() {
-    var ctx = document.getElementById("firstCanvas").getContext("2d");
     ctx.beginPath();
     for(var i=1; i<51; i++) {
         for(var j=1; j<51; j++) {
@@ -25,7 +44,7 @@ function conway() {
             else {
                 ctx.fillStyle = 'rgb(255, 255, 255)';
             }
-            ctx.fillRect((j-1)*10, (i-1)*10, 10, 10);
+            ctx.fillRect((j-1)*step, (i-1)*step, step, step);
         }
     }
     iterate();

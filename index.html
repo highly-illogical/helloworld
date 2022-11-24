@@ -6,22 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hello world</title>
     <style>
+        @media (min-width: 320px) {
+            .container {
+                width: 90%;
+                margin-left: 5%;
+            }
+
+            .container > * {
+                width: 100%;
+            }
+
+        }
+
+        @media (min-width: 768px) {
+        .container {
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+            margin-top: 3%;
+        }
+
+        .container > .link {
+            width: auto;
+        }
+    }
+
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 50%;
-            margin-left: 25%;
-            margin-right: 25%;
-            margin-top: 3%;
-            font-family: 'Courier New', Courier, monospace
         }
 
         .container > * {
             padding: 2%;
             margin: 2%;
             text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: normal;
         }
 
         .text {
@@ -31,42 +53,30 @@
 
         .link:nth-child(even) {
             border: 1px solid #f06;
-            transition: background-color 0.5s;
+            transition: color 0.5s, background-color 0.5s;
+            color: #f06;
+            background-color: white;
+            text-decoration: none;
         }
 
         .link:nth-child(odd) {
             border: 1px solid #06f;
-            transition: background-color 0.5s;
-        }
-
-        .link:nth-child(even) > * {
-            color: #f06;
-            text-decoration: none;
-            transition: color-color 0.5s;
-        }
-
-        .link:nth-child(odd) > * {
+            transition: color 0.5s, background-color 0.5s;
             color: #06f;
+            background-color: white;
             text-decoration: none;
-            transition: color 0.5s;
         }
 
-        .link:hover:nth-child(even) {
+        .link:nth-child(even):hover {
             border: 1px solid #f06;
             background-color: #f06;
+            color: white;
+            text-decoration: none;
         }
 
         .link:hover:nth-child(odd) {
             border: 1px solid #06f;
             background-color: #06f;
-        }
-
-        .link:hover:nth-child(even) > * {
-            color: white;
-            text-decoration: none;
-        }
-
-        .link:hover:nth-child(odd) > * {
             color: white;
             text-decoration: none;
         }
@@ -75,10 +85,11 @@
 <body>
     <div class="container">
         <div class="text">I recently found a folder on my computer containing small projects I'd made when I was learning HTML, CSS and JS. I liked some of them enough that I wanted to put them on the internet and share them with the world.</div>
-        <div class="link"><a href="./starfield.html">Starfield</a></div>
-        <div class="link"><a href="./conway.html">Conway's Game of Life</a></div>
-        <div class="link"><a href="./canvas.html">Colour Waves</a></div>
-        <div class="link"><a href="./calendar.html">Calendar</a></div>
+        <a class="link" href="./starfield.html">Starfield</a>
+        <a class="link" href="./conway.html">Conway's Game of Life</a>
+        <a class="link" href="./canvas.html">Colour Waves</a>
+        <a class="link" href="./bouncingball.html">Bouncing Ball Game</a>
+        <a class="link" href="./calendar.html">Calendar</a>
     </div>
 </body>
 </html>

@@ -1,6 +1,17 @@
+var width = window.innerWidth * 0.7;
+var height = window.innerHeight * 0.7;
+
+var can = document.getElementById("firstCanvas");
+var ctx = can.getContext("2d");
+
+var side = Math.min(height, width);
+
+can.width = side;
+can.height = side;
+
+var step = side/80;
+
 function drawGrid(pos) {
-    var can = document.getElementById("firstCanvas");
-    var ctx = can.getContext("2d");
     ctx.beginPath();
     for(var i=0; i<80; i++) {
         for(var j=0; j<80; j++) {
@@ -8,7 +19,7 @@ function drawGrid(pos) {
             ctx.fillStyle = `rgb(${128+75*Math.sin((r-j-pos)/5)}, 
                 ${128+75*Math.sin((r+i+pos)/5)},
                 ${128+75*Math.sin((-r-j-pos)/5)})`;
-            ctx.fillRect(i*5, j*5, (i+1)*5, (j+1)*5);
+            ctx.fillRect(i*step, j*step, (i+1)*step, (j+1)*step);
         }
     }
 }

@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conway's Game of Life</title>
-    <script src='conway.js'></script>
 </head>
 <body>
     <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; margin: 2%;">
-    <canvas id="firstCanvas" width="500" height="500" style="border: 1px solid black">
+    <canvas id="firstCanvas" style="border: 1px solid black">
     </canvas>
     <p>
     <button onclick="setInterval(conway, 100)">Start</button>
     <button onclick="reset()">Reset</button></p>
     </div>
+    <script src='conway.js'></script>
 </body>
 </html>
