@@ -19,6 +19,8 @@ var ctx = can.getContext("2d");
 can.width = side;
 can.height = side;
 
+can.style.border = "1px solid black";
+
 var step = side/50;
 
 function reset() {

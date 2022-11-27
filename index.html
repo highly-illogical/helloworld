@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hello world</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
     <style>
+        body {
+            background-color: white;
+            font-size: 24px;
+        }
+
         @media (min-width: 320px) {
             .container {
                 width: 90%;
@@ -36,19 +42,37 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            background-color: white;
         }
 
         .container > * {
             padding: 2%;
             margin: 2%;
             text-align: center;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Caveat Brush', cursive;
             font-weight: normal;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+        }
+
+        .grid > * {
+            margin: 5%;
+            padding: 20%;
         }
 
         .text {
             background-color: black;
             color: white;
+            box-shadow: 3px 3px 5px black;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .link:nth-child(even) {
@@ -57,6 +81,7 @@
             color: #f06;
             background-color: white;
             text-decoration: none;
+            box-shadow: 3px 3px 5px #f06;
         }
 
         .link:nth-child(odd) {
@@ -65,6 +90,7 @@
             color: #06f;
             background-color: white;
             text-decoration: none;
+            box-shadow: 3px 3px 5px #06f;
         }
 
         .link:nth-child(even):hover {
@@ -72,6 +98,7 @@
             background-color: #f06;
             color: white;
             text-decoration: none;
+            box-shadow: 3px 3px 5px #f06;
         }
 
         .link:hover:nth-child(odd) {
@@ -79,17 +106,24 @@
             background-color: #06f;
             color: white;
             text-decoration: none;
+            box-shadow: 3px 3px 5px #06f;
+        }
+
+        .link:last-child {
+            margin-bottom: 4%;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="text">I recently found a folder on my computer containing small projects I'd made when I was learning HTML, CSS and JS. I liked some of them enough that I wanted to put them on the internet and share them with the world.</div>
-        <a class="link" href="./starfield.html">Starfield</a>
+        <div class="text">Things I made while learning HTML, CSS and JS <br>(and that I'm still working on)</div>
+        <div class="grid">
+            <a class="link" href="./starfield.html">Starfield</a>
         <a class="link" href="./conway.html">Conway's Game of Life</a>
         <a class="link" href="./canvas.html">Colour Waves</a>
         <a class="link" href="./bouncingball.html">Bouncing Ball Game</a>
         <a class="link" href="./calendar.html">Calendar</a>
+        </div>
     </div>
 </body>
 </html>

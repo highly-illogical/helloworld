@@ -9,13 +9,15 @@ var side = Math.min(height, width);
 can.width = side;
 can.height = side;
 
-var step = side/80;
+can.style.border = "1px solid black";
+
+var step = 5;
 
 function drawGrid(pos) {
     ctx.beginPath();
-    for(var i=0; i<80; i++) {
-        for(var j=0; j<80; j++) {
-            var r = Math.sqrt((i-40)**2 + (j-40)**2);
+    for(var i=0; i<side/step; i++) {
+        for(var j=0; j<side/step; j++) {
+            var r = Math.sqrt((i-side/(2*step))**2 + (j-side/(2*step))**2);
             ctx.fillStyle = `rgb(${128+75*Math.sin((r-j-pos)/5)}, 
                 ${128+75*Math.sin((r+i+pos)/5)},
                 ${128+75*Math.sin((-r-j-pos)/5)})`;
