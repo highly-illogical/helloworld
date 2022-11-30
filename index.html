@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hello world</title>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: white;
-            font-size: 24px;
+            background-color: whitesmoke;
+            font-size: 1.75rem;
         }
 
         @media (min-width: 320px) {
@@ -22,18 +22,43 @@
                 width: 100%;
             }
 
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 640px) {
+            .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        }
+
+        @media (min-width: 1025px) {
         .container {
-            width: 50%;
-            margin-left: 25%;
-            margin-right: 25%;
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
             margin-top: 3%;
         }
 
         .container > .link {
             width: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .grid > a:hover {
+            margin-left: -0.25rem;
+            margin-right: -0.25rem;
         }
     }
 
@@ -41,32 +66,54 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            background-color: white;
+            background-color: whitesmoke;
         }
 
         .container > * {
-            padding: 2%;
-            margin: 2%;
-            text-align: center;
-            font-family: 'Caveat Brush', cursive;
+            font-family: Inter, cursive;
             font-weight: normal;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 33% 33% 33%;
+        .grid > a {
+            text-align: center;
+            padding: 20%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-blend-mode: luminosity;
         }
 
-        .grid > * {
-            margin: 5%;
-            padding: 20%;
+        .grid > a:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        .grid > a:nth-child(3n + 1) {
+            margin-left: 0;
+        }
+
+        .starfield:link {
+            background-image: url("starfield.png");
+        }
+
+        .conway:link {
+            background-image: url("conway.png");
+            background-blend-mode: overlay;
+        }
+
+        .canvas:link {
+            background-image: url("canvas.png");
+        }
+
+        .calendar:link {
+            background-image: url("calendar.png");
+            background-blend-mode: color-burn;
         }
 
         .text {
-            background-color: black;
-            color: white;
-            box-shadow: 3px 3px 5px black;
+            margin-bottom: 2%;
+        }
+
+        .text > hr {
+            border: 0.5px solid black;
         }
 
         .link {
@@ -76,53 +123,51 @@
         }
 
         .link:nth-child(even) {
-            border: 1px solid #f06;
-            transition: color 0.5s, background-color 0.5s;
-            color: #f06;
-            background-color: white;
+            transition: color 0.5s, background-color 0.5s, box-shadow 0.5s, margin 0.5s;
+            color: transparent;
+            background-color: #f06;
             text-decoration: none;
-            box-shadow: 3px 3px 5px #f06;
+            box-shadow: 3px 3px 10px transparent;
         }
 
         .link:nth-child(odd) {
-            border: 1px solid #06f;
-            transition: color 0.5s, background-color 0.5s;
-            color: #06f;
-            background-color: white;
+            transition: color 0.5s, background-color 0.5s, box-shadow 0.5s, margin 0.5s;
+            color: transparent;
+            background-color: #06f;
             text-decoration: none;
-            box-shadow: 3px 3px 5px #06f;
+            box-shadow: 3px 3px 10px transparent;
         }
 
         .link:nth-child(even):hover {
-            border: 1px solid #f06;
             background-color: #f06;
             color: white;
             text-decoration: none;
-            box-shadow: 3px 3px 5px #f06;
+            box-shadow: 3px 3px 10px transparent;
         }
 
         .link:hover:nth-child(odd) {
-            border: 1px solid #06f;
             background-color: #06f;
             color: white;
             text-decoration: none;
-            box-shadow: 3px 3px 5px #06f;
-        }
-
-        .link:last-child {
-            margin-bottom: 4%;
+            box-shadow: 3px 3px 10px transparent;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="text">Things I made while learning HTML, CSS and JS <br>(and that I'm still working on)</div>
+        <div class="text">Things I made while learning HTML, CSS and JS <br>(and that I'm still working on)<hr>
+        </div>
         <div class="grid">
-            <a class="link" href="./starfield.html">Starfield</a>
-        <a class="link" href="./conway.html">Conway's Game of Life</a>
-        <a class="link" href="./canvas.html">Colour Waves</a>
+        <!--img src="starfield.png" height="200px" width="300px"-->
+        <a class="link starfield" href="./starfield.html">Starfield</a>
+        <a class="link conway" href="./conway.html">Conway's Game of Life</a>
+        <a class="link canvas" href="./canvas.html">Colour Waves</a>
         <a class="link" href="./bouncingball.html">Bouncing Ball Game</a>
-        <a class="link" href="./calendar.html">Calendar</a>
+        <a class="link calendar" href="./calendar.html">Calendar</a>
+        <a class="link" href="./calendar.html">B</a>
+        <a class="link" href="./calendar.html">C</a>
+        <a class="link" href="./calendar.html">D</a>
+        <a class="link" href="./calendar.html">E</a>
         </div>
     </div>
 </body>
