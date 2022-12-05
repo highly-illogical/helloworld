@@ -1,0 +1,45 @@
+@keyframes floating {
+    from {
+      top: 0;
+    }
+    to {
+      top: -20px;
+    }
+  }
+  body {
+    background-color: #111;
+  }
+  
+  div {
+    position: relative;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    margin: 10% 0 0 30%;
+    animation: floating 2s ease-out infinite alternate;
+  }
+  
+  .red {
+    left: 3rem;
+    background-color: #501;
+    background-image: radial-gradient(#fee, #f11);
+    box-shadow: 0 0 70px 10px red;
+  }
+  
+  .green {
+    left: 12rem;
+    background-color: #150;
+    animation-delay: 1s;
+    background-image: radial-gradient(#efe, #1f1);
+    box-shadow: 0 0 70px 10px green;
+    transform: translateY(30px);
+  }
+  
+  .blue {
+    left: 25rem;
+    background-color: #150;
+    animation-delay: -1s;
+    background-image: radial-gradient(#eef, #11f);
+    box-shadow: 0 0 70px 10px blue;
+    transform: translateY(-350px);
+  }
