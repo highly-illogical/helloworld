@@ -1,187 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hello world</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-grid-first: #06f;
-            --color-grid-second: #f06;
-            --grid-element-shadow: 3px 3px 10px transparent;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>hello world</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--color-grid-first: #06f;
+				--color-grid-second: #f06;
+				--grid-element-shadow: 3px 3px 10px transparent;
+			}
 
-        body {
-            font-family: Inter, cursive;
-            background-color: whitesmoke;
-            font-size: 1.75rem;
-        }
+			body {
+				font-family: Inter, cursive;
+				background-color: whitesmoke;
+				font-size: 1.75rem;
+			}
 
-        @media (min-width: 320px) {
-            .container {
-                width: 90%;
-                margin-left: 5%;
-            }
+			@media (min-width: 320px) {
+				.container {
+					width: 90%;
+					margin-left: 5%;
+				}
 
-            .container > * {
-                width: 100%;
-            }
+				.container > * {
+					width: 100%;
+				}
 
-            .grid {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
+				.grid {
+					display: grid;
+					aspect-ratio: 0.25;
+					grid-template-columns: 1fr;
+					gap: 1rem;
+				}
+			}
 
-        }
+			@media (min-width: 640px) {
+				.grid {
+					display: grid;
+					aspect-ratio: 0.8;
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+					gap: 1rem;
+				}
 
-        @media (min-width: 640px) {
-            .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-            gap: 1rem;
-        }
+				.grid > a {
+					padding: 15%;
+				}
+			}
 
-        .grid > a {
-                padding: 20%;
-            }
-        }
+			@media (min-width: 1025px) {
+				.container {
+					width: 60%;
+					margin-left: 20%;
+					margin-right: 20%;
+				}
 
-        @media (min-width: 1025px) {
-        .container {
-            width: 60%;
-            margin-left: 20%;
-            margin-right: 20%;
-        }
+				.container > .link {
+					width: auto;
+				}
 
-        .container > .link {
-            width: auto;
-        }
+				.grid {
+					display: grid;
+					aspect-ratio: 1 / 1;
+					grid-template-columns: 1fr 1fr 1fr;
+					grid-template-rows: 1fr 1fr 1fr;
+					gap: 1rem;
+				}
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            gap: 1rem;
-        }
+				.grid > a:hover {
+					margin: -0.5rem;
+				}
+			}
 
-        .grid > a:hover {
-            margin: -0.5rem;
-        }
-    }
+			.container {
+				margin-top: 3%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
 
-        .container {
-            margin-top: 3%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+			.container > * {
+				font-weight: normal;
+			}
 
-        .container > * {
-            font-weight: normal;
-        }
+			.grid > a {
+				text-align: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-blend-mode: luminosity;
+			}
 
-        .grid > a {
-            text-align: center;
-            padding: 25%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-blend-mode: luminosity;
-        }
+			.grid > a:nth-child(3n) {
+				margin-right: 0;
+			}
 
-        .grid > a:nth-child(3n) {
-            margin-right: 0;
-        }
+			.grid > a:nth-child(3n + 1) {
+				margin-left: 0;
+			}
 
-        .grid > a:nth-child(3n + 1) {
-            margin-left: 0;
-        }
+			.starfield:link {
+				background-image: url('starfield.png');
+			}
 
-        .starfield:link {
-            background-image: url("starfield.png");
-        }
+			.conway:link {
+				background-image: url('conway.png');
+				background-blend-mode: overlay;
+			}
 
-        .conway:link {
-            background-image: url("conway.png");
-            background-blend-mode: overlay;
-        }
+			.canvas:link {
+				background-image: url('canvas.png');
+			}
 
-        .canvas:link {
-            background-image: url("canvas.png");
-        }
+			.calendar:link {
+				background-image: url('calendar.png');
+				background-blend-mode: color-burn;
+			}
 
-        .calendar:link {
-            background-image: url("calendar.png");
-            background-blend-mode: color-burn;
-        }
+			.lights:link {
+				background-image: url('lights.png');
+			}
 
-        .lights:link {
-            background-image: url("lights.png");
-        }
+			.text {
+				margin-bottom: 2%;
+			}
 
-        .text {
-            margin-bottom: 2%;
-        }
+			.text > hr {
+				border: 0.5px solid black;
+			}
 
-        .text > hr {
-            border: 0.5px solid black;
-        }
+			.link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 
-        .link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+			.link:nth-child(even) {
+				border-radius: 0%;
+				transition: color 0.5s, border-radius 0.5s, background-color 0.5s,
+					box-shadow 0.5s, margin 0.2s;
+				color: transparent;
+				background-color: var(--color-grid-second);
+				text-decoration: none;
+				box-shadow: var(--grid-element-shadow);
+			}
 
-        .link:nth-child(even) {
-            transition: color 0.5s, background-color 0.5s, box-shadow 0.5s, margin 0.2s;
-            color: transparent;
-            background-color: var(--color-grid-second);
-            text-decoration: none;
-            box-shadow: var(--grid-element-shadow);
-        }
+			.link:nth-child(odd) {
+				border-radius: 0%;
+				transition: color 0.5s, border-radius 0.5s, background-color 0.5s,
+					box-shadow 0.5s, margin 0.2s;
+				color: transparent;
+				background-color: var(--color-grid-first);
+				text-decoration: none;
+				box-shadow: var(--grid-element-shadow);
+			}
 
-        .link:nth-child(odd) {
-            transition: color 0.5s, background-color 0.5s, box-shadow 0.5s, margin 0.2s;
-            color: transparent;
-            background-color: var(--color-grid-first);
-            text-decoration: none;
-            box-shadow: var(--grid-element-shadow);
-        }
+			.link:nth-child(even):hover {
+				border-radius: 0%;
+				background-color: var(--color-grid-second);
+				color: white;
+				text-decoration: none;
+				box-shadow: var(--grid-element-shadow);
+			}
 
-        .link:nth-child(even):hover {
-            background-color: var(--color-grid-second);
-            color: white;
-            text-decoration: none;
-            box-shadow: var(--grid-element-shadow);
-        }
-
-        .link:hover:nth-child(odd) {
-            background-color: var(--color-grid-first);
-            color: white;
-            text-decoration: none;
-            box-shadow: var(--grid-element-shadow);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="text">Things I made while learning HTML, CSS and JS <br>(and that I'm still working on)<hr>
-        </div>
-        <div class="grid">
-        <a class="link starfield" href="./starfield.html">Starfield</a>
-        <a class="link conway" href="./conway.html">Conway's Game of Life</a>
-        <a class="link canvas" href="./canvas.html">Colour Waves</a>
-        <a class="link" href="./bouncingball.html">Bouncing Ball Game</a>
-        <a class="link calendar" href="./calendar.html">Calendar</a>
-        <a class="link lights" href="./lights.html">Floating Lights</a>
-        <a class="link" href="./calendar.html">C</a>
-        <a class="link" href="./calendar.html">D</a>
-        <a class="link" href="./calendar.html">E</a>
-        </div>
-    </div>
-</body>
+			.link:hover:nth-child(odd) {
+				border-radius: 0%;
+				background-color: var(--color-grid-first);
+				color: white;
+				text-decoration: none;
+				box-shadow: var(--grid-element-shadow);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="text">
+				Things I made while learning HTML, CSS and JS <br />(and that I'm still
+				working on)
+				<hr />
+			</div>
+			<div class="grid">
+				<a class="link starfield" href="./starfield.html">Starfield</a>
+				<a class="link conway" href="./conway.html">Conway's Game of Life</a>
+				<a class="link canvas" href="./canvas.html">Colour Waves</a>
+				<a class="link" href="./bouncingball.html">Bouncing Ball Game</a>
+				<a class="link calendar" href="./calendar.html">Calendar</a>
+				<a class="link lights" href="./lights.html">Floating Lights</a>
+				<a class="link" href="./calendar.html">C</a>
+				<a class="link" href="./calendar.html">D</a>
+				<a class="link" href="./calendar.html">E</a>
+			</div>
+		</div>
+	</body>
 </html>
