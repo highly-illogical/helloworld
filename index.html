@@ -9,17 +9,12 @@
 			href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="stylesheet" href="styles.css" />
 		<style>
 			:root {
 				--color-grid-first: #06f;
 				--color-grid-second: #f06;
 				--grid-element-shadow: 3px 3px 10px transparent;
-			}
-
-			body {
-				font-family: Inter, cursive;
-				background-color: whitesmoke;
-				font-size: 1.75rem;
 			}
 
 			@media (min-width: 320px) {
@@ -50,15 +45,14 @@
 				}
 
 				.grid > a {
-					padding: 15%;
+					padding: 20%;
 				}
 			}
 
 			@media (min-width: 1025px) {
 				.container {
 					width: 60%;
-					margin-left: 20%;
-					margin-right: 20%;
+					margin: 0 auto;
 				}
 
 				.container > .link {
@@ -67,7 +61,8 @@
 
 				.grid {
 					display: grid;
-					aspect-ratio: 1 / 1;
+					aspect-ratio: 1.2;
+					width: 100%;
 					grid-template-columns: 1fr 1fr 1fr;
 					grid-template-rows: 1fr 1fr 1fr;
 					gap: 1rem;
@@ -94,14 +89,6 @@
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-blend-mode: luminosity;
-			}
-
-			.grid > a:nth-child(3n) {
-				margin-right: 0;
-			}
-
-			.grid > a:nth-child(3n + 1) {
-				margin-left: 0;
 			}
 
 			.starfield:link {
@@ -142,8 +129,8 @@
 
 			.link:nth-child(even) {
 				border-radius: 0%;
-				transition: color 0.5s, border-radius 0.5s, background-color 0.5s,
-					box-shadow 0.5s, margin 0.2s;
+				transition: color 0.5s, background-color 0.5s, box-shadow 0.5s,
+					margin 0.2s;
 				color: transparent;
 				background-color: var(--color-grid-second);
 				text-decoration: none;
@@ -152,8 +139,8 @@
 
 			.link:nth-child(odd) {
 				border-radius: 0%;
-				transition: color 0.5s, border-radius 0.5s, background-color 0.5s,
-					box-shadow 0.5s, margin 0.2s;
+				transition: color 0.5s, background-color 0.5s, box-shadow 0.5s,
+					margin 0.2s;
 				color: transparent;
 				background-color: var(--color-grid-first);
 				text-decoration: none;

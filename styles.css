@@ -1,0 +1,15 @@
+body {
+	font-family: Inter, cursive;
+	background-color: whitesmoke;
+	font-size: 1.75rem;
+}
+
+.flex-container-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-container-column {
+	display: flex;
+	flex-direction: column;
+}

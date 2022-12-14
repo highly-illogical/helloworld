@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conway's Game of Life</title>
-</head>
-<body>
-    <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; margin: 2%;">
-    <canvas id="firstCanvas">
-    </canvas>
-    <p>
-    <button onclick="setInterval(conway, 100)">Start</button>
-    <button onclick="reset()">Reset</button></p>
-    </div>
-    <script src='conway.js'></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Conway's Game of Life</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div
+			style="
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				margin: 2%;
+			"
+		>
+			<canvas id="firstCanvas"> </canvas>
+			<p>
+				<button onclick="setInterval(conway, 100)">Start</button>
+				<button onclick="reset()">Reset</button>
+			</p>
+		</div>
+		<script src="conway.js"></script>
+	</body>
 </html>
