@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>3D World</title>
+		<style>
+			body {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="three.js"></script>
+		<script>
+			let alpha = 0.0;
+			let beta = 0.0;
+			let gamma = 0.0;
+
+			window.addEventListener('deviceorientation', (e) => {
+				alpha = (e.alpha * Math.PI) / 180;
+				beta = (e.beta * Math.PI) / 180;
+				gamma = (e.gamma * Math.PI) / 180;
+			});
+
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera(
+				75,
+				window.innerWidth / window.innerHeight,
+				0.1,
+				1000
+			);
+
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+
+			const colorRange = 256 * 256 - 1;
+			const radius = 5;
+
+			for (var i = 0; i < 100; i++) {
+				const geometry = new THREE.BoxGeometry();
+				const material = new THREE.MeshBasicMaterial({
+					color: Math.floor(Math.random() * colorRange),
+				});
+				const cube = new THREE.Mesh(geometry, material);
+				cube.position.x = radius * Math.sin(Math.random() * 2 * Math.PI);
+				cube.position.y = radius * Math.sin(Math.random() * 2 * Math.PI);
+				cube.position.z = radius * Math.sin(Math.random() * 2 * Math.PI);
+				scene.add(cube);
+			}
+
+			function animate() {
+				requestAnimationFrame(animate);
+
+				camera.rotation.x = beta;
+				camera.rotation.y = gamma;
+				camera.rotation.z = alpha;
+
+				renderer.render(scene, camera);
+			}
+
+			animate();
+		</script>
+	</body>
+</html>
